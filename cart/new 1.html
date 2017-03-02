@@ -1,0 +1,27 @@
+<html>
+<head>
+<script type="text/javascript">
+function f1()
+{
+var http;
+http=new XMLHttpRequest();
+http.onreadystatechange=function ()
+{
+if(http.readystate==4)
+{
+document.getElementById("mydiv").innerHTML=http.responseText;
+}
+}
+http.open("GET","new1.php",true);
+http.send();
+}
+</script>
+</head>
+<body>
+<div id="mydiv"><h2>ajax chnae text</h2></div>
+<form>
+<input type="text" name="t1" id="t1" onblur="f1()">
+<button type="button" onclick="f1()">change contnt</button>
+</form>
+</body>
+</html>
